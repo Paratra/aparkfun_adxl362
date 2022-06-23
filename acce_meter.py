@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 
 
-COLLECT_TIME = 20
+COLLECT_TIME = 15
 
 
 accel = ADXL362.ADXL362(device=0, ce_pin=0)
@@ -18,8 +18,8 @@ z_list = []
 t_start = time.time()
 
 while True:
-    if (time.time() - t_start) % 1 == 0:
-        print(f'Collecting Time: {(time.time() - t_start)}')
+    # if (time.time() - t_start) % 1 == 0:
+    #     print(f'Collecting Time: {(time.time() - t_start)}')
     
     if time.time() - t_start > COLLECT_TIME:
         break
