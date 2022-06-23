@@ -3,6 +3,11 @@ import time
 from pdb import set_trace as st
 # from datetime import datetime
 import pandas as pd
+import numpy as np
+
+
+COLLECT_TIME = 20
+
 
 accel = ADXL362.ADXL362(device=0, ce_pin=0)
 accel.begin_measure()
@@ -13,7 +18,10 @@ z_list = []
 t_start = time.time()
 
 while True:
-    if time.time() - t_start >10:
+    if (time.time() - t_start) % 1 == 0:
+        print(f'Collecting Time: {(time.time() - t_start)}')
+    
+    if time.time() - t_start > COLLECT_TIME:
         break
 
     x_list.append(accel.read_x())
