@@ -24,9 +24,9 @@ while True:
     if time.time() - t_start > COLLECT_TIME:
         break
 
-    x_list.append(accel.read_x())
-    y_list.append(accel.read_y())
-    z_list.append(accel.read_z())
+    x_list.append(accel.read_x()/1000)
+    y_list.append(accel.read_y()/1000)
+    z_list.append(accel.read_z()/1000)
 
     # print('-----------------------')
     # print (accel.read_x())
