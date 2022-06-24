@@ -194,5 +194,4 @@ class ADXL362:
         if val&(1<<(bits-1)) != 0:
             return_val = val - (1<<bits)
 
-
         return return_val
