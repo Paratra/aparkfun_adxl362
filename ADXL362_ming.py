@@ -2,9 +2,9 @@
 ### Library for Communicating with ADXL362 Accelerometer ###
 ### for Raspberry Pi using spidev                        ###
 ###                                                      ###
-### Authors: Sam Zeckendorf                              ###
-###          Nathan Tarrh                                ###
-###    Date: 3/29/2014                                   ###
+### Authors: Ming                                        ###
+###                                                      ###
+###    Date: 6/24/2022                                   ###
 ############################################################ 
 
 # spidev is the Raspberry Pi spi communication library
@@ -12,7 +12,7 @@ import spidev
 import time
 
 from pdb import set_trace as st
-# PYDEVD_USE_FRAME_EVAL=NO
+
 
 class ADXL362:
 
@@ -85,6 +85,10 @@ class ADXL362:
                 - Value of ug in x direction
         '''
         x = self.spi_read_two(0x0E)
+        # print(self.spi.cshigh)
+        # print(self.spi.xfer2([0x0B, 0x0E, 0x00, 0x00]))
+        # st()
+
         return x
 
     def read_y(self):
@@ -101,6 +105,7 @@ class ADXL362:
                 - Value of ug in the z direction
         '''
         z = self.spi_read_two(0x12)
+        # print(self.spi.xfer2([0x0B, 0x12, 0x00, 0x00]))
         return z
 
     def read_temp(self):
@@ -135,8 +140,9 @@ class ADXL362:
         '''
        
         # Send read instruction
+        self.spi.cshigh = False
         value = self.spi.xfer2([0x0B, address, 0x00, 0x00])
-
+        self.spi.cshigh = True
       
         # Isolate low and high bytes from response
         val_l = value[2]
@@ -146,6 +152,7 @@ class ADXL362:
         
         # Append low byte and high byte together
         value = (val_l + val_h) 
+
 
         # Turn format of response into hexidecimal for parsing  
         return self.twos_comp(int("{0:#0{1}x}".format(value,6), 16), 16)
@@ -157,11 +164,16 @@ class ADXL362:
                 -   value: Value to be written
         '''
         # Split value into high and low bytes for writing
+        # self.spi.cshigh = False
+
+        
         high_byte = value >> 8
         low_byte = value & 0xFF
        
         # Send write instruction
         self.spi.xfer2([0x0A, address, low_byte, high_byte])
+
+        # self.spi.cshigh = True
        
         return value
     
@@ -173,9 +185,14 @@ class ADXL362:
         
         return values[2:]
 
-    def twos_comp(self,val, bits):
+    def twos_comp(self, val, bits):
         """ Returns two's complement of value given a number of bits
         """
+
+        # val = val - (1<<bits)
+        return_val = 0
         if val&(1<<(bits-1)) != 0:
-            val = val - (1<<bits)
-        return val
+            return_val = val - (1<<bits)
+
+
+        return return_val
