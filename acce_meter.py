@@ -40,7 +40,9 @@ x_arr = np.array(x_list) - np.mean(x_list)
 y_arr = np.array(y_list) - np.mean(y_list)
 z_arr = np.array(z_list) - np.mean(z_list)
 
-data_pd = pd.DataFrame(np.array([x_arr, y_arr, z_arr]).T, columns=['x','y','z'])
+# data_pd = pd.DataFrame(np.array([x_arr, y_arr, z_arr]).T, columns=['x','y','z'])
+data_pd = pd.DataFrame(np.array([x_arr]).T, columns=['x'])
+
 data_pd.to_csv('./data_test.csv')
 print('Save Done!')
 # st()
