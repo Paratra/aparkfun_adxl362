@@ -10,6 +10,9 @@ def main():
     ## visulize
     # plt.figure()
     data_pd.plot(kind='line',y=['x','y','z'])
+    data_pd.plot(kind='line',y=['x_velo'])
+    data_pd.plot(kind='line',y=['y_velo'])
+    data_pd.plot(kind='line',y=['z_velo'])
     # data_pd.plot(kind='line',y='y',color='green')
     # data_pd.plot(kind='line',y='z',color='blue')
 
