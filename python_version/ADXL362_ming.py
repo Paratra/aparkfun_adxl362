@@ -189,9 +189,14 @@ class ADXL362:
         """ Returns two's complement of value given a number of bits
         """
 
-        # val = val - (1<<bits)
-        return_val = 0
-        if val&(1<<(bits-1)) != 0:
-            return_val = val - (1<<bits)
 
-        return return_val
+        if val&(1<<(bits-1)) != 0:
+            val = val - (1<<bits)
+
+        return val
+
+        # return_val = 0
+        # if val&(1<<(bits-1)) != 0:
+        #     return_val = val - (1<<bits)
+
+        # return return_val
