@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mingpi/mingws/sparkfun_adxl362/cpp_version/libs/spidev-lib/spidev_lib++.cc" "/home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/ADXL362_measure.dir/libs/spidev-lib/spidev_lib++.cc.o"
-  "/home/mingpi/mingws/sparkfun_adxl362/cpp_version/src/ADXL362_measure_xyztemp.cpp" "/home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/ADXL362_measure.dir/src/ADXL362_measure_xyztemp.cpp.o"
+  "/home/mingpi/mingws/sparkfun_adxl362/cpp_version/libs/spidev-lib/spidev_lib++.cc" "/home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/spidev-lib++.dir/libs/spidev-lib/spidev_lib++.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

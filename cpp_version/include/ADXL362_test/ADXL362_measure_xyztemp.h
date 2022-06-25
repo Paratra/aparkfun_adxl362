@@ -16,6 +16,9 @@
 #include <sstream>
 #include <typeinfo>
 #include <vector>
+#include <typeinfo>
+#include <cstring>
+#include <spidev_lib++.h>
 
 
 using namespace std;

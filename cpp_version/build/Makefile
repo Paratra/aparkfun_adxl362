@@ -142,6 +142,49 @@ ADXL362_measure/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADXL362_measure.dir/build.make CMakeFiles/ADXL362_measure.dir/build
 .PHONY : ADXL362_measure/fast
 
+#=============================================================================
+# Target rules for targets named spidev-lib++
+
+# Build rule for target.
+spidev-lib++: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spidev-lib++
+.PHONY : spidev-lib++
+
+# fast build rule for target.
+spidev-lib++/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/spidev-lib++.dir/build.make CMakeFiles/spidev-lib++.dir/build
+.PHONY : spidev-lib++/fast
+
+libs/spidev-lib/spidev_lib++.o: libs/spidev-lib/spidev_lib++.cc.o
+
+.PHONY : libs/spidev-lib/spidev_lib++.o
+
+# target to build an object file
+libs/spidev-lib/spidev_lib++.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADXL362_measure.dir/build.make CMakeFiles/ADXL362_measure.dir/libs/spidev-lib/spidev_lib++.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/spidev-lib++.dir/build.make CMakeFiles/spidev-lib++.dir/libs/spidev-lib/spidev_lib++.cc.o
+.PHONY : libs/spidev-lib/spidev_lib++.cc.o
+
+libs/spidev-lib/spidev_lib++.i: libs/spidev-lib/spidev_lib++.cc.i
+
+.PHONY : libs/spidev-lib/spidev_lib++.i
+
+# target to preprocess a source file
+libs/spidev-lib/spidev_lib++.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADXL362_measure.dir/build.make CMakeFiles/ADXL362_measure.dir/libs/spidev-lib/spidev_lib++.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/spidev-lib++.dir/build.make CMakeFiles/spidev-lib++.dir/libs/spidev-lib/spidev_lib++.cc.i
+.PHONY : libs/spidev-lib/spidev_lib++.cc.i
+
+libs/spidev-lib/spidev_lib++.s: libs/spidev-lib/spidev_lib++.cc.s
+
+.PHONY : libs/spidev-lib/spidev_lib++.s
+
+# target to generate assembly for a file
+libs/spidev-lib/spidev_lib++.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADXL362_measure.dir/build.make CMakeFiles/ADXL362_measure.dir/libs/spidev-lib/spidev_lib++.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/spidev-lib++.dir/build.make CMakeFiles/spidev-lib++.dir/libs/spidev-lib/spidev_lib++.cc.s
+.PHONY : libs/spidev-lib/spidev_lib++.cc.s
+
 src/ADXL362_measure_xyztemp.o: src/ADXL362_measure_xyztemp.cpp.o
 
 .PHONY : src/ADXL362_measure_xyztemp.o
@@ -178,6 +221,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ADXL362_measure"
+	@echo "... spidev-lib++"
+	@echo "... libs/spidev-lib/spidev_lib++.o"
+	@echo "... libs/spidev-lib/spidev_lib++.i"
+	@echo "... libs/spidev-lib/spidev_lib++.s"
 	@echo "... src/ADXL362_measure_xyztemp.o"
 	@echo "... src/ADXL362_measure_xyztemp.i"
 	@echo "... src/ADXL362_measure_xyztemp.s"

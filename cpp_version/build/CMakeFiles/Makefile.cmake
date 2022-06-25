@@ -46,4 +46,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ADXL362_measure.dir/DependInfo.cmake"
+  "CMakeFiles/spidev-lib++.dir/DependInfo.cmake"
   )

@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/ADXL362_measure.dir/src/ADXL362_measure_xyztemp.cpp.o -o ADXL362_measure 
+/usr/bin/c++ -rdynamic CMakeFiles/ADXL362_measure.dir/src/ADXL362_measure_xyztemp.cpp.o CMakeFiles/ADXL362_measure.dir/libs/spidev-lib/spidev_lib++.cc.o -o ADXL362_measure 

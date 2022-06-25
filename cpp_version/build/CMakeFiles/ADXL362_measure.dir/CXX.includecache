@@ -21,6 +21,16 @@ typeinfo
 -
 vector
 -
+typeinfo
+-
+cstring
+-
+spidev_lib++.h
+-
+
+../libs/spidev-lib/spidev_lib++.h
+stdint.h
+-
 
 /home/mingpi/mingws/sparkfun_adxl362/cpp_version/src/ADXL362_measure_xyztemp.cpp
 ADXL362_test/ADXL362_measure_xyztemp.h

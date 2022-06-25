@@ -11,14 +11,33 @@ project( ADXL362_measure )
 # message( ${OpenCV_VERSION} )
 
 include_directories(
+  src
   include
+  libs/spidev-lib
 )
+
+# add_library(spidev-lib libs/spidev-lib/spidev_lib.c)
+add_library(spidev-lib++ libs/spidev-lib/spidev_lib++.cc)
+# target_link_libraries(ADXL362_measure spidev-lib++)
+# add_dependencies(ADXL362_measure spidev-lib++)
+# target_link_libraries( spi-testc spidev-lib)
+
 
 add_executable( ADXL362_measure
   src/ADXL362_measure_xyztemp.cpp
   include/ADXL362_test/ADXL362_measure_xyztemp.h
+  libs/spidev-lib/spidev_lib++.h
+  libs/spidev-lib/spidev_lib++.cc
 )
 
 #target_link_libraries(
 #  visualize_consistency ${OpenCV_LIBS}
 #)
+
+# INSTALL(TARGETS  spidev-lib++
+#   RUNTIME DESTINATION bin
+#   LIBRARY DESTINATION lib
+#   ARCHIVE DESTINATION lib
+# )
+
+# INSTALL( FILES src/spidev_lib++.h DESTINATION include)

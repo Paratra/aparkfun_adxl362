@@ -1,3 +1,4 @@
 /home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/rebuild_cache.dir
 /home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/edit_cache.dir
 /home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/ADXL362_measure.dir
+/home/mingpi/mingws/sparkfun_adxl362/cpp_version/build/CMakeFiles/spidev-lib++.dir
