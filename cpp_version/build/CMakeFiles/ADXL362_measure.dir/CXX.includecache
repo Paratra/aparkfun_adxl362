@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ADXL362_test/ADXL362_measure_xyztemp.h
+iostream
+-
+stdio.h
+-
+fstream
+-
+string
+-
+sstream
+-
+typeinfo
+-
+vector
+-
+
+/home/mingpi/mingws/sparkfun_adxl362/cpp_version/src/ADXL362_measure_xyztemp.cpp
+ADXL362_test/ADXL362_measure_xyztemp.h
+/home/mingpi/mingws/sparkfun_adxl362/cpp_version/src/ADXL362_test/ADXL362_measure_xyztemp.h
+

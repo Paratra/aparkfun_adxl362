@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/ADXL362_measure.dir/src/ADXL362_measure_xyztemp.cpp.o -o ADXL362_measure 
