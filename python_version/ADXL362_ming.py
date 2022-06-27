@@ -143,15 +143,16 @@ class ADXL362:
         self.spi.cshigh = False
         value = self.spi.xfer2([0x0B, address, 0x00, 0x00])
         self.spi.cshigh = True
+
+        # print(value)
       
         # Isolate low and high bytes from response
         val_l = value[2]
         val_h = value[3] << 8
 
-        # st()
         
         # Append low byte and high byte together
-        value = (val_l + val_h) 
+        value = (val_l + val_h)
 
 
         # Turn format of response into hexidecimal for parsing  
@@ -190,8 +191,12 @@ class ADXL362:
         """
 
 
+
         if val&(1<<(bits-1)) != 0:
             val = val - (1<<bits)
+        # else:
+        #     st()
+        # print(val)
 
         return val
 
