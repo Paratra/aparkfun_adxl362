@@ -47,7 +47,7 @@ def main():
         # print (accel.read_z())
         # print (accel.read_temp())
         # print (accel.read_xyz())
-        time.sleep(0.1)
+        time.sleep(0.01)
 
     x_arr = np.array(x_list) - np.mean(x_list)
     y_arr = np.array(y_list) - np.mean(y_list)

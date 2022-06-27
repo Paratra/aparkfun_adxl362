@@ -147,7 +147,7 @@ class ADXL362:
        
         # Send read instruction
         # self.spi.cshigh = False
-        value = self.spi.xfer2([0x0B, address, 0x00, 0x00, 0x00, 0x00])
+        value = self.spi.xfer2([0x0B, address, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
         # self.spi.cshigh = True
 
         # print(value)
