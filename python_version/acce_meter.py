@@ -22,6 +22,7 @@ def main():
 
     accel = ADXL362_ming.ADXL362(device=0, ce_pin=0)
     accel.begin_measure()
+
     x_list = []
     y_list = []
     z_list = []
@@ -47,7 +48,7 @@ def main():
         # print (accel.read_z())
         # print (accel.read_temp())
         # print (accel.read_xyz())
-        time.sleep(0.01)
+        time.sleep(0.2)
 
     x_arr = np.array(x_list) - np.mean(x_list)
     y_arr = np.array(y_list) - np.mean(y_list)

@@ -43,9 +43,9 @@ class ADXL362:
                 -   value: Desired hexidecimal byte to write
         '''
         # Send instruction (write), address, and value
-        self.spi.cshigh = False
+        # self.spi.cshigh = False
         self.spi.xfer2([0x0A, address, value])
-        self.spi.cshigh = True
+        # self.spi.cshigh = True
         
     def spi_read_reg(self, address):
         ''' Read contents of register at specified address
@@ -147,10 +147,11 @@ class ADXL362:
        
         # Send read instruction
         # self.spi.cshigh = False
-        value = self.spi.xfer2([0x0B, address, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+        value = self.spi.xfer2([0x0B, address, 0x00, 0x00])
         # self.spi.cshigh = True
 
         # print(value)
+        
 
         # st()
       
@@ -197,37 +198,37 @@ class ADXL362:
         
         return values[2:]
 
-    # def twos_comp(self, val, bits):
-    #     """ Returns two's complement of value given a number of bits
-    #     """
+    def twos_comp(self, val, bits):
+        """ Returns two's complement of value given a number of bits
+        """
 
 
 
-    #     if val&(1<<(bits-1)) != 0:
-    #         val = val - (1<<bits)
-    #     # else:
-    #     #     st()
-    #     # print(val)
-
-    #     return val
-
-    #     # return_val = 0
-    #     # if val&(1<<(bits-1)) != 0:
-    #     #     return_val = val - (1<<bits)
-
-    #     # return return_val
-
-    def twos_comp(self,val, nbits):
-        """Compute the 2's complement of int value val"""
-        if val < 0:
-            val = (1 << nbits) + val
-        else:
-            if (val & (1 << (nbits - 1))) != 0:
-                # If sign bit is set.
-                # compute negative value.
-                val = val - (1 << nbits)
+        if val&(1<<(bits-1)) != 0:
+            val = val - (1<<bits)
+        # else:
+        #     st()
         print(val)
+
         return val
+
+        # return_val = 0
+        # if val&(1<<(bits-1)) != 0:
+        #     return_val = val - (1<<bits)
+
+        # return return_val
+
+    # def twos_comp(self,val, nbits):
+    #     """Compute the 2's complement of int value val"""
+    #     if val < 0:
+    #         val = (1 << nbits) + val
+    #     else:
+    #         if (val & (1 << (nbits - 1))) != 0:
+    #             # If sign bit is set.
+    #             # compute negative value.
+    #             val = val - (1 << nbits)
+    #     # print(val)
+    #     return val
 
     # def twos_comp(self, value, bitWidth):
     #     if value >= 2**bitWidth:
