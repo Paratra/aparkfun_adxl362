@@ -36,9 +36,9 @@ def main():
         if time.time() - t_start > COLLECT_TIME:
             break
 
-        x_list.append(accel.read_x()/100)
-        y_list.append(accel.read_y()/100)
-        z_list.append(accel.read_z()/100)
+        x_list.append(accel.read_x()/1000 * 9.8)
+        y_list.append(accel.read_y()/1000 * 9.8)
+        z_list.append(accel.read_z()/1000 * 9.8)
         # y_list.append(0)
         # z_list.append(0)
 
