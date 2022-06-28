@@ -168,8 +168,8 @@ class ADXL362:
 
 
         # Turn format of response into hexidecimal for parsing  
-        # return self.twos_comp(int("{0:#0{1}x}".format(value,6), 16), 16)
-        return value
+        return self.twos_comp(int("{0:#0{1}x}".format(value,6), 16), 16)
+        # return value
        
     def spi_write_two(self, address, value):
         ''' Write to two sequential registers
