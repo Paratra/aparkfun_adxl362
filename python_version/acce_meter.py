@@ -33,12 +33,12 @@ def main():
         # if (time.time() - t_start) % 1 == 0:
         #     print(f'Collecting Time: {(time.time() - t_start)}')
         
-        if time.time() - t_start > COLLECT_TIME:
-            break
+        # if time.time() - t_start > COLLECT_TIME:
+        #     break
 
         x_list.append(accel.read_x()/1000)
-        y_list.append(accel.read_y()/1000)
-        z_list.append(accel.read_z()/1000)
+        # y_list.append(accel.read_y()/1000)
+        # z_list.append(accel.read_z()/1000)
         # y_list.append(0)
         # z_list.append(0)
 
@@ -48,7 +48,7 @@ def main():
         # print (accel.read_z())
         # print (accel.read_temp())
         # print (accel.read_xyz())
-        time.sleep(0.2)
+        time.sleep(0.01)
 
     x_arr = np.array(x_list) - np.mean(x_list)
     y_arr = np.array(y_list) - np.mean(y_list)

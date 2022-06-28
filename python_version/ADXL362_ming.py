@@ -150,7 +150,7 @@ class ADXL362:
         value = self.spi.xfer2([0x0B, address, 0x00, 0x00])
         # self.spi.cshigh = True
 
-        # print(value)
+        print(value)
         
 
         # st()
@@ -164,11 +164,12 @@ class ADXL362:
         
         # Append low byte and high byte together
         value = (val_l + val_h)
-        value = val_l
+        # value = val_l
 
 
         # Turn format of response into hexidecimal for parsing  
-        return self.twos_comp(int("{0:#0{1}x}".format(value,6), 16), 16)
+        # return self.twos_comp(int("{0:#0{1}x}".format(value,6), 16), 16)
+        return value
        
     def spi_write_two(self, address, value):
         ''' Write to two sequential registers
@@ -208,7 +209,7 @@ class ADXL362:
             val = val - (1<<bits)
         # else:
         #     st()
-        print(val)
+        # print(val)
 
         return val
 

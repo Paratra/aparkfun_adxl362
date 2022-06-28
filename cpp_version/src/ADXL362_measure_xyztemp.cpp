@@ -14,7 +14,7 @@ void ADXL362_MEASURE_XYZTEMP::test(string test_msg){
 int main() {
 
   ADXL362_MEASURE_XYZTEMP adxl362;
-  testmsg = "Where is your father?";
+  testmsg = "May the force be with you";
   adxl362.test(testmsg);
 
 
