@@ -29,7 +29,7 @@ def get_fft(data_arr, delta_T):
 def main():
 
   ser = serial.Serial( 
-    port='/dev/tty.usbmodem146401',#
+    port='/dev/tty.usbmodem145101',#
     baudrate=9600,# 
     parity=serial.PARITY_ODD,
     stopbits=serial.STOPBITS_TWO,
@@ -39,8 +39,8 @@ def main():
   data = ''
 
   data_list = []
-  x_offset = 0.0
-  y_offset = 0.0
+  x_offset = -0.02
+  y_offset = -0.05
   z_offset = 0.18
 
 
@@ -104,8 +104,16 @@ def main():
 
 
 
+
+
+  ####### plotting
+  position = 'Free-Run'
+
   plt.figure('X-Axis',figsize=(12,6))
+
   plt.subplot(2,1,1)
+  plt.title(f'{position}-X-Axis')
+
   plt.plot(data_arr[:,0])
   plt.xlabel(f'Time({Fz}s)')
   plt.ylabel('Acceleration(m/s^2)')
@@ -117,8 +125,13 @@ def main():
   plt.xticks(np.arange(0, 25, step=1))
   plt.grid()
 
+  plt.savefig(f'./{position}_x.png')
+
   plt.figure('Y-Axis',figsize=(12,6))
+
   plt.subplot(2,1,1)
+  plt.title(f'{position}-Y-Axis')
+
   plt.plot(data_arr[:,1])
   plt.xlabel(f'Time({Fz}s)')
   plt.ylabel('Acceleration(m/s^2)')
@@ -130,8 +143,13 @@ def main():
   plt.xticks(np.arange(0, 25, step=1))
   plt.grid()
 
+  plt.savefig(f'./{position}_y.png')
+
+
   plt.figure('Z-Axis',figsize=(12,6))
   plt.subplot(2,1,1)
+  plt.title(f'{position}-Z-Axis')
+
   plt.plot(data_arr[:,2])
   plt.xlabel(f'Time({Fz}s)')
   plt.ylabel('Acceleration(m/s^2)')
@@ -143,6 +161,7 @@ def main():
   plt.xticks(np.arange(0, 25, step=1))
   plt.grid()
 
+  plt.savefig(f'./{position}_z.png')
 
 
 
